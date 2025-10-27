@@ -19,19 +19,33 @@ do
         echo "4. Divide"
         echo -e "5. Quit\n"
         read -p "Choose your operator: " choice
-        if [ $choice -eq 1 ];then
+
+		case $choice in
+            1)
                 sum=$(( number1 + number2 ))
-                echo -e "The Answer is $sum\n"
-        elif [ $choice -eq 2 ];then
+                echo "The Answer is $sum"
+                ;;
+            2)
                 sum=$(( number1 - number2 ))
-                echo -e "The Answer is $sum\n"
-        elif [ $choice -eq 3 ];then
+                echo "The Answer is $sum"
+                ;;
+            3)
                 sum=$(( number1 * number2 ))
-                echo -e "The Answer is $sum\n"
-        elif [ $choice -eq 4 ];then
-                sum=$(echo "scale=3; $number1 / $number2" | bc -l)
-                echo -e "The Answer is $sum\n"
-        elif [ $choice -eq 5 ];then
+                echo "The Answer is $sum"
+                ;;
+            4)
+                sum=$(echo "scale=10; $number1 / $number2" | bc -l)
+                echo "The Answer is $sum"
+                ;;
+            5)
+                echo -e "\nGoodbye!\n"
+                break
+                ;;
+            *)
+                echo "Please choose from the menu options: "
+                ;;
+        esac
+    
 		echo -e "\nGoodbye!\n"
                 break
         else
