@@ -34,7 +34,7 @@ do
                 echo "The Answer is $sum"
                 ;;
             4)
-                sum=$(echo "scale=10; $number1 / $number2" | bc -l)
+                sum=$(echo "scale=3; $number1 / $number2" | bc -l)
                 echo "The Answer is $sum"
                 ;;
             5)
